@@ -49,6 +49,8 @@ public class LightBall : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, 180 * timer / PressTime);
         if (currentState == 4)
         {
+            FindObjectOfType<GameManager>().currentStage = 2;
+            FindObjectOfType<GameManager>().isReached = false;
             Destroy(this);
         }
     }

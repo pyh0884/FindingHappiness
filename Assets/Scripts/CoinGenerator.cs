@@ -8,13 +8,6 @@ public class CoinGenerator : MonoBehaviour
     public GameObject coinPrefab;
     public float ShootingSpeed;
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Generate();
-        }
-    }
     public void Generate() 
     {
         var coin = Instantiate(coinPrefab, transform.position, Quaternion.identity, null);

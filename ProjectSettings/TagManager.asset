@@ -7,6 +7,9 @@ TagManager:
   - Coin
   - LightBall
   - Cross
+  - Deadzone
+  - TurnAround
+  - Goal
   layers:
   - Default
   - TransparentFX

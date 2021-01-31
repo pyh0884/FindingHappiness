@@ -10,7 +10,7 @@ public class MartiniGirl : MonoBehaviour
     public float force;
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             GetComponent<Animator>().SetTrigger("Rotate");
         }

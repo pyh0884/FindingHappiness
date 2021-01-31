@@ -7,6 +7,11 @@ public class Meteorite : MonoBehaviour
     public float speed = 10;
     public float scaleSpeed;
     private float scale = 1;
+    public Vector3 startPoint = new Vector3(74.5f, -4.8f);
+    private void Start()
+    {
+        scale = transform.localScale.x;
+    }
     private void Update()
     {
         scale -= Time.deltaTime * scaleSpeed;
@@ -14,10 +19,10 @@ public class Meteorite : MonoBehaviour
         transform.RotateAround(new Vector3(100, 0, 0), new Vector3(0, 0, -1), speed * Time.deltaTime);
         transform.localScale = new Vector3(scale, scale, scale);
 
-        if (transform.position.x > 103)
+        if (transform.position.x > 101)
         {
-            transform.position = new Vector3(74.5f, -4.8f);
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.position = startPoint;
+            scale = 1;
         }
 
     }
