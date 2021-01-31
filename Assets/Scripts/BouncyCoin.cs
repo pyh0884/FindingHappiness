@@ -9,6 +9,7 @@ public class BouncyCoin : MonoBehaviour
         if (collision.gameObject.tag == "LightBall")
         {
             collision.GetComponent<LightBall>().enabled = true;
+            GameObject.Find("光晕").SetActive(true);
             Destroy(FindObjectOfType<MartiniGirl>());
             Destroy(gameObject, 0.15f);
         }

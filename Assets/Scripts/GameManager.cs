@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
                 levels[1].SetActive(false);
                 levels[0].SetActive(true);
                 FindObjectOfType<MoveCamera>().Move(new Vector3(40.25f, 10.25f, -10));
-                FindObjectOfType<CoinGenerator>().Generate();
+                StartCoroutine("GenerateCoin");
                 isReached = true;
                 break;
             case 2:
@@ -65,5 +65,10 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(2);
+    }
+    IEnumerator GenerateCoin()
+    {
+        yield return new WaitForSeconds(8);
+        FindObjectOfType<CoinGenerator>().Generate();
     }
 }
